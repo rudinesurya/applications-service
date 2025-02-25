@@ -22,14 +22,14 @@ export class ApplicationsController {
       const application = await this.applicationsService.getApplicationById(id);
       result = {
         status: HttpStatus.OK,
-        system_message: 'applications_get_success',
+        system_message: 'application_get_success',
         application: application,
         errors: null,
       };
     } else {
       result = {
         status: HttpStatus.BAD_REQUEST,
-        system_message: 'applications_get_bad_request',
+        system_message: 'application_get_bad_request',
         application: null,
         errors: null,
       };
