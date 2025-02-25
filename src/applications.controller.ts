@@ -7,6 +7,7 @@ import { IApplicationSearchResponse } from './interfaces/application-search-resp
 import { IApplicationUpdateResponse } from './interfaces/application-update-response.interface';
 import { IApplicationUpdate } from './interfaces/application-update.interface';
 import { IApplication } from './interfaces/application.interface';
+import { IApplicationsSearchResponse } from './interfaces/applications-search-response.interface';
 
 @Controller('applications')
 export class ApplicationsController {
@@ -31,6 +32,30 @@ export class ApplicationsController {
         status: HttpStatus.BAD_REQUEST,
         system_message: 'application_get_bad_request',
         application: null,
+        errors: null,
+      };
+    }
+
+    return result;
+  }
+
+  @MessagePattern('applications_get_by_job_id')
+  public async getApplicationsByJobId({ id }): Promise<IApplicationsSearchResponse> {
+    let result: IApplicationsSearchResponse;
+
+    if (id) {
+      const applications = await this.applicationsService.getApplicationsByJobId(id);
+      result = {
+        status: HttpStatus.OK,
+        system_message: 'applications_get_success',
+        applications: applications,
+        errors: null,
+      };
+    } else {
+      result = {
+        status: HttpStatus.BAD_REQUEST,
+        system_message: 'applications_get_bad_request',
+        applications: null,
         errors: null,
       };
     }

@@ -16,6 +16,12 @@ export class ApplicationsService {
       .exec();
   }
 
+  public async getApplicationsByJobId(id: string): Promise<IApplication[]> {
+    return this.applicationModel
+      .find({ job: new Types.ObjectId(id) })
+      .exec();
+  }
+
   public async createApplication(application: IApplication): Promise<IApplication> {
     try {
       const applicationModel = new this.applicationModel(application);
