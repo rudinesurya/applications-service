@@ -4,5 +4,5 @@ export interface IApplicationCreateResponse {
     status: number;
     system_message: string;
     application: IApplication | null;
-    errors: { [key: string]: any };
+    errors: { [key: string]: any } | null;
 }
