@@ -1,14 +1,8 @@
 import { Controller, HttpStatus } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { ApplicationsService } from './services/applications.service';
-import { IApplicationCreateResponse } from './interfaces/application-create-response.interface';
-import { IApplicationDeleteResponse } from './interfaces/application-delete-response.interface';
-import { IApplicationSearchResponse } from './interfaces/application-search-response.interface';
-import { IApplicationUpdateResponse } from './interfaces/application-update-response.interface';
-import { IApplicationUpdate } from './interfaces/application-update.interface';
-import { IApplication } from './interfaces/application.interface';
-import { IApplicationsSearchResponse } from './interfaces/applications-search-response.interface';
 import logger from '@rudinesurya/logger';
+import { IApplicationSearchResponse, IApplicationsSearchResponse, IApplication, IApplicationCreateResponse, IApplicationUpdate, IApplicationUpdateResponse, IApplicationDeleteResponse } from '@rudinesurya/applications-service-interfaces';
 
 @Controller('applications')
 export class ApplicationsController {

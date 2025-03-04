@@ -1,8 +1,7 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { IApplication, IApplicationUpdate } from '@rudinesurya/applications-service-interfaces';
 import { FilterQuery, Model, Types } from 'mongoose';
-import { IApplicationUpdate } from 'src/interfaces/application-update.interface';
-import { IApplication } from 'src/interfaces/application.interface';
 
 @Injectable()
 export class ApplicationsService {
