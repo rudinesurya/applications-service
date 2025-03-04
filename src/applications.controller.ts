@@ -8,7 +8,7 @@ import { IApplicationUpdateResponse } from './interfaces/application-update-resp
 import { IApplicationUpdate } from './interfaces/application-update.interface';
 import { IApplication } from './interfaces/application.interface';
 import { IApplicationsSearchResponse } from './interfaces/applications-search-response.interface';
-import logger from './services/logger';
+import logger from '@rudinesurya/logger';
 
 @Controller('applications')
 export class ApplicationsController {
